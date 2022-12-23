@@ -11,7 +11,9 @@ resource "github_repository" "example" {
 }
 
 resource "github_repository_file" "editorconfig" {
-  repository          = "ansible-osx"
+  for_each = toset( ["ansible-osx", "npm-audit-action", "zenn-content"] )
+
+  repository          = each.key
   branch              = "main"
   file                = ".editorconfig"
   content             = file(".editorconfig")
