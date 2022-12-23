@@ -2,6 +2,7 @@ resource "github_repository" "example" {
   name        = "example"
   description = "Configure github.com/oke-py with Terraform"
 
+  has_issues   = true
   has_projects = false
   has_wiki     = false
 
