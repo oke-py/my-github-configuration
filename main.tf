@@ -1,5 +1,5 @@
-resource "github_repository" "my-github-configuration" {
-  name        = "my-github-configuration"
+resource "github_repository" "example" {
+  name        = "example"
   description = "Configure github.com/oke-py with Terraform"
 
   has_projects = false
