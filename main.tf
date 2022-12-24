@@ -9,6 +9,6 @@ resource "github_repository_file" "editorconfig" {
   branch              = "main"
   file                = ".editorconfig"
   content             = file(".editorconfig")
-  commit_message      = "Managed by Terraform"
+  commit_message      = "distribute .editorconfig by Terraform"
   overwrite_on_create = true
 }
