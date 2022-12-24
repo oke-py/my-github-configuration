@@ -10,8 +10,12 @@ resource "github_repository" "example" {
   delete_branch_on_merge = true
 }
 
+data "github_repositories" "mine" {
+  query = "org:oke-py archived:false"
+}
+
 resource "github_repository_file" "editorconfig" {
-  for_each = toset( ["ansible-osx", "npm-audit-action", "zenn-content"] )
+  for_each = toset(data.github_repositories.mine.names)
 
   repository          = each.key
   branch              = "main"
