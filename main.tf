@@ -15,7 +15,7 @@ data "github_repositories" "mine" {
 }
 
 resource "github_repository_file" "editorconfig" {
-  for_each = data.github_repositories.mine
+  for_each = data.github_repositories.mine.names
 
   repository          = each.key
   branch              = "main"
