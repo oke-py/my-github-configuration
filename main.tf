@@ -1,5 +1,5 @@
 data "github_repositories" "mine" {
-  query = "org:oke-py archived:false"
+  query = "user:oke-py archived:false -topic:article -topic:presentation"
 }
 
 resource "github_repository_file" "editorconfig" {
