@@ -7,6 +7,10 @@ resource "github_repository" "codes" {
 
   name = each.key
 
+  description  = local.repos[each.key].description
+  homepage_url = local.repos[each.key].homepage_url
+  topics       = local.repos[each.key].topics
+
   visibility   = "public"
   has_issues   = true
   has_projects = false
@@ -15,6 +19,8 @@ resource "github_repository" "codes" {
   allow_squash_merge     = false
   allow_rebase_merge     = false
   delete_branch_on_merge = true
+
+  vulnerability_alerts = true
 }
 
 resource "github_repository_file" "editorconfig" {
