@@ -1,0 +1,15 @@
+{
+  "name": "my-github-configuration",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "extensions": [
+    "EditorConfig.EditorConfig",
+    "HashiCorp.terraform"
+  ],
+  "features": {
+    "terraform": {
+        "version": "latest",
+        "tflint": "latest",
+        "terragrunt": "latest"
+    }
+  }
+}
